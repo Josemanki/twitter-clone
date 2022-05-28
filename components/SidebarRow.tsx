@@ -3,11 +3,17 @@ import React, { SVGProps } from 'react'
 interface SidebarRowProps {
   Icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
   title: string
+  onClick?: () => {}
 }
 
-export const SidebarRow: React.FC<SidebarRowProps> = ({ Icon, title }) => {
+export const SidebarRow: React.FC<SidebarRowProps> = ({
+  Icon,
+  title,
+  onClick,
+}) => {
   return (
     <div
+      onClick={() => onClick?.()}
       className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all
       duration-200 hover:bg-gray-100"
     >
